@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TX Travel - Price Calculator</title>
+    <!-- Link ke File CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Bagian Kiri: Input -->
+        <div class="input-section">
+            <div class="header">
+                <h1>TX Travel</h1>
+                <p>Price Calculator System</p>
+            </div>
+
+            <div class="form-group">
+                <label>Nama Produk Tour</label>
+                <input type="text" id="productName" class="form-control" placeholder="Contoh: Tour Bali 3 Hari 2 Malam">
+            </div>
+
+            <div class="form-group">
+                <label>Tanggal Keberangkatan</label>
+                <input type="date" id="departureDate" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Harga Basic (Rp)</label>
+                <input type="number" id="basePrice" class="form-control" placeholder="0" oninput="calculate()">
+            </div>
+
+            <div class="form-group">
+                <label>Biaya Visa (Rp)</label>
+                <input type="number" id="visaCost" class="form-control" placeholder="0" oninput="calculate()">
+            </div>
+
+            <div class="form-group">
+                <label>Tipping / Service (Rp)</label>
+                <input type="number" id="tipping" class="form-control" placeholder="0" oninput="calculate()">
+            </div>
+
+            <div class="form-group">
+                <label>Komisi (Rp)</label>
+                <input type="number" id="commission" class="form-control" placeholder="0" oninput="calculate()">
+            </div>
+        </div>
+
+        <!-- Bagian Kanan: Hasil -->
+        <div class="result-section">
+            <div class="summary-card">
+                <h3 style="margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom:10px;">Rincian Harga</h3>
+                
+                <div class="summary-row">
+                    <span>Harga Basic</span>
+                    <span id="displayBase">Rp 0</span>
+                </div>
+                
+                <div class="summary-row">
+                    <span>PPN (1.1%)</span>
+                    <span id="displayPpn">Rp 0</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Biaya Visa</span>
+                    <span id="displayVisa">Rp 0</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Tipping</span>
+                    <span id="displayTipping">Rp 0</span>
+                </div>
+
+                <div class="summary-row" style="opacity: 0.7;">
+                    <span>Komisi</span>
+                    <span id="displayCommission">Rp 0</span>
+                </div>
+
+                <div class="summary-row total">
+                    <span>Total Harga (Excl. Komisi)</span>
+                    <span id="displayTotal">Rp 0</span>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-secondary" onclick="resetForm()">Reset</button>
+                <button class="btn btn-primary" onclick="window.print()">Cetak / PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link ke File JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
